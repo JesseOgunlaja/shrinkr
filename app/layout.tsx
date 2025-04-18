@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import ProtectedNavbar from "@/components/protected/ProtectedNavbar";
 import PublicNavbar from "@/components/PublicNavbar";
 import { ClerkProvider, SignedIn, SignedOut } from "@clerk/nextjs";
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { Toaster } from "sonner";
@@ -26,6 +27,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={`${poppins.className}`}>
+          <Analytics />
           <div id="wrapper">
             <Toaster richColors position="top-right" closeButton />
             <SignedIn>
