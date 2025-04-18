@@ -52,7 +52,9 @@ main:has(> [data-clerk-component]) {
   display: none;
 }
 
-dialog > div {
-  min-width: 0px !important;
-  width: 90% !important;
+@media (width < 750px) {
+  dialog > div {
+    min-width: 0px !important;
+    width: 90% !important;
+  }
 }
