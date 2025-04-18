@@ -1,10 +1,10 @@
 import Footer from "@/components/Footer";
 import ProtectedNavbar from "@/components/protected/ProtectedNavbar";
 import PublicNavbar from "@/components/PublicNavbar";
+import { env } from "@/lib/env";
 import { ClerkProvider, SignedIn, SignedOut } from "@clerk/nextjs";
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
-// import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 import { Poppins } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
@@ -15,8 +15,25 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Url Shortener",
-  description: "",
+  title: {
+    default: "Shrinkr",
+    template: "Shrinkr | %s",
+  },
+  metadataBase: new URL(env.BASE_URL),
+  description: "A URL shortener",
+  keywords: ["URL shortener", "shrinkr", "Jesse Ogunlaja"],
+  authors: [
+    {
+      name: "Jesse Ogunlaja",
+    },
+  ],
+  openGraph: {
+    title: "Shrinkr",
+    description: "A URL shortener",
+    images: ["https://shrinkr.dev/opengraph.png"],
+    locale: "en_GB",
+  },
+  creator: "Jesse Ogunlaja",
 };
 
 export default function RootLayout({
