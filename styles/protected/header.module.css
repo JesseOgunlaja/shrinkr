@@ -1,0 +1,61 @@
+.header {
+  width: 100%;
+}
+
+.header div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  & p {
+    font-size: 40px;
+    font-weight: 500;
+    display: flex;
+    margin-left: 10px;
+    align-items: center;
+    gap: 10px;
+
+    & svg {
+      height: 35px;
+      width: 35px;
+      stroke-width: 3px;
+    }
+  }
+
+  & a {
+    background: var(--accent-color);
+    color: white;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: Poppins, Poppins Fallback;
+  }
+}
+
+.header hr {
+  margin-top: 15px;
+  width: 100%;
+  height: 1px;
+  background: #e5e5e5;
+}
+
+@media (width < 375px) {
+  .header div {
+    & > p {
+      display: flex;
+      font-size: 30px;
+
+      & svg {
+        height: 25px;
+        width: 25px;
+      }
+    }
+
+    & > a {
+      font-size: 18px;
+    }
+  }
+}

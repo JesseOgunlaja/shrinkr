@@ -1,0 +1,230 @@
+.main {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.main h1 {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 5px;
+}
+
+.main > p {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 23.5px;
+  width: min(95%, 950px);
+  margin-bottom: 100px;
+}
+
+.main form {
+  background: var(--accent-color);
+  color: white;
+  padding: 22.5px 30px;
+  width: min(90%, 810px);
+  margin: 0 auto;
+  margin-bottom: 50px;
+  border-radius: 35px;
+
+  & p:first-child {
+    font-size: 25px;
+    font-weight: 500;
+  }
+
+  & p:nth-child(2) {
+    font-size: 18px;
+    opacity: 0.8;
+    margin-bottom: 55px;
+  }
+
+  & label {
+    font-size: 20px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  & input {
+    background: none;
+    display: block;
+    width: 100%;
+    border-radius: 7.5px;
+    font-size: 19px;
+    font-family: Poppins, Poppins Fallback;
+    padding: 10px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    margin-bottom: 15px;
+
+    &:focus-visible {
+      outline: 2px solid white !important;
+    }
+
+    &::placeholder {
+      opacity: 0.6;
+      color: white;
+    }
+  }
+
+  & button {
+    background: white;
+    font-weight: 500;
+    color: #111 !important;
+    margin-top: 5px;
+    font-size: 19px;
+    padding: 13.5px 18px;
+    border-radius: 12.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgb(225, 225, 225);
+    }
+  }
+}
+
+.main .pricing {
+  background: rgba(180, 180, 180, 0.3);
+  padding: 50px 0;
+  margin-top: 50px;
+  gap: 35px;
+
+  & > p {
+    text-align: center;
+    font-weight: 500;
+    font-size: 45px;
+    margin-bottom: 50px;
+    & span {
+      color: var(--accent-color);
+    }
+  }
+
+  .plans {
+    justify-content: center;
+    display: flex;
+    gap: 35px;
+  }
+
+  & article {
+    width: min(50%, 425px);
+    background: white;
+    border-radius: 10px;
+
+    & > div:first-child {
+      border-radius: 10px 10px 0px 0px;
+      display: flex;
+      width: 100%;
+      background: var(--accent-color);
+      color: white;
+      gap: 10px;
+      padding: 10px;
+
+      & p {
+        font-size: 27.5px;
+        font-weight: 500;
+      }
+
+      & svg {
+        height: 35px;
+        width: 35px;
+      }
+    }
+
+    & > div:last-child {
+      display: flex;
+      height: 87.5%;
+      flex-direction: column;
+      gap: 10px;
+      padding: 20px;
+      & > p:first-of-type {
+        font-size: 45px;
+        margin-bottom: 30px;
+        & span {
+          font-size: 20px;
+        }
+      }
+
+      .features {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        & svg {
+          height: 20px;
+          width: 20px;
+        }
+        & p {
+          display: flex;
+          gap: 5px;
+          align-items: center;
+          font-size: 17px;
+        }
+      }
+
+      & a {
+        background: var(--accent-color);
+        color: white;
+        padding: 12.5px 22.5px;
+        border-radius: 25px;
+        text-decoration: none;
+        text-align: center;
+        margin: 10px 0;
+        font-weight: 500;
+        font-size: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+          background: rgb(0, 62, 125);
+        }
+      }
+    }
+  }
+}
+
+@media (width < 930px) {
+  .main .pricing {
+    & > p {
+      font-size: 38px;
+    }
+    & .plans {
+      flex-direction: column;
+      align-items: center;
+
+      & article {
+        width: min(90%, 600px);
+      }
+    }
+  }
+}
+
+@media (width < 750px) {
+  .main h1 {
+    font-size: 40px;
+  }
+}
+
+@media (width < 610px) {
+  .main h1 {
+    font-size: 35px;
+    text-wrap: balance;
+  }
+}
+
+@media (width < 500px) {
+  .main > p {
+    font-size: 21px;
+  }
+}
+
+@media (width < 450px) {
+  .main h1 {
+    font-size: 40px;
+  }
+
+  .main > p {
+    font-size: 19px;
+  }
+
+  .main .pricing > p {
+    font-size: 30px;
+  }
+}

@@ -1,0 +1,58 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-family: Poppins, Poppins Fallback !important;
+  box-sizing: border-box;
+}
+
+body {
+  --font-color: #222;
+  --accent-color: #135190;
+  scrollbar-gutter: stable;
+  color: var(--font-color);
+}
+
+#title-link {
+  font-weight: 600 !important;
+}
+
+main:has(> section article) + footer {
+  background: white !important;
+}
+
+#wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main:has(> [data-clerk-component]) {
+  display: flex;
+  margin: auto 0;
+  justify-content: center;
+}
+
+[data-clerk-component="SignIn"] > div {
+  width: 27.5rem;
+}
+
+.cl-cardBox {
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 5px 15px 0px,
+    rgba(0, 0, 0, 0.07) 0px 0px 0px 1px;
+}
+
+.cl-userButtonPopoverFooter,
+.cl-footer div:last-child {
+  display: none;
+}
+
+.cl-navbar div:last-child div:last-child {
+  display: none;
+}
+
+dialog > div {
+  min-width: 0px !important;
+  width: 90% !important;
+}

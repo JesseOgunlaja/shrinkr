@@ -1,0 +1,78 @@
+.main article {
+  width: min(50%, 425px);
+  background: white;
+  margin: 0 auto;
+  border-radius: 10px;
+
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 5px 15px 0px,
+    rgba(25, 28, 33, 0.2) 0px 15px 35px -5px,
+    rgba(0, 0, 0, 0.07) 0px 0px 0px 1px;
+
+  & > div:first-child {
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    width: 100%;
+    background: var(--accent-color);
+    color: white;
+    gap: 10px;
+    padding: 10px;
+
+    & p {
+      font-size: 27.5px;
+      font-weight: 500;
+    }
+
+    & svg {
+      height: 35px;
+      width: 35px;
+    }
+  }
+
+  & > div:last-child {
+    display: flex;
+    height: 87.5%;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    & > p:first-of-type {
+      font-size: 45px;
+      margin-bottom: 30px;
+      & span {
+        font-size: 20px;
+      }
+    }
+
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      & svg {
+        height: 20px;
+        width: 20px;
+      }
+      & p {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        font-size: 17px;
+      }
+    }
+
+    & a {
+      background: var(--accent-color);
+      color: white;
+      padding: 12.5px 22.5px;
+      border-radius: 25px;
+      text-decoration: none;
+      text-align: center;
+      margin: 10px 0;
+      font-weight: 500;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &:hover {
+        background: rgb(0, 62, 125);
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.footer {
+  width: 100%;
+  display: flex;
+  padding: 15px 20px;
+  margin-top: auto;
+  background: rgba(180, 180, 180, 0.3);
+  justify-content: space-between;
+}
+
+.footer p:last-child {
+  display: flex;
+  gap: 10px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: var(--font-color);
+}

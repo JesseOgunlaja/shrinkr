@@ -1,0 +1,135 @@
+#wrapper {
+  padding: 30px 100px;
+}
+
+.main {
+  padding: 25px 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.main .link {
+  border: 1.5px solid rgb(220, 220, 220);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  background: rgb(248, 248, 248);
+  border-radius: 10px;
+
+  & div:first-child {
+    display: flex;
+    font-weight: 500;
+    justify-content: space-between;
+    font-size: 25px;
+
+    & dialog {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(40, 40, 40, 0.5);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:not([open]) {
+        display: none;
+      }
+
+      & > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: white;
+        width: fit-content;
+        min-width: 450px;
+        max-width: 95%;
+        padding: 30px 20px;
+        border-radius: 20px;
+
+        & button {
+          cursor: pointer;
+        }
+
+        & p:nth-child(2) {
+          font-size: 17px;
+          font-weight: 400;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+
+        & div {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+
+          & button {
+            color: white;
+            background: var(--accent-color);
+            padding: 7px 12.5px;
+            font-size: 17px;
+            border-radius: 7.5px;
+          }
+        }
+      }
+    }
+
+    & div {
+      display: flex;
+      gap: 5px;
+      position: relative;
+
+      & a:has(svg) {
+        height: 0px;
+      }
+
+      & svg {
+        height: 35px;
+        width: 35px;
+        border-radius: 5px;
+        padding: 7.5px;
+        color: var(--font-color);
+        border: 1px solid rgb(200, 200, 200);
+
+        &:nth-child(3) {
+          color: red;
+          stroke-width: 2.25px;
+        }
+
+        &:hover {
+          background: rgb(220, 220, 220);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  & a {
+    text-decoration: none;
+    color: var(--font-color);
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:first-of-type {
+      font-weight: 500;
+      color: var(--accent-color);
+    }
+  }
+}
+
+@media (width < 900px) {
+  #wrapper {
+    padding: 30px;
+  }
+}
+
+@media (width < 750px) {
+  .main {
+    grid-template-columns: 1fr;
+    /* grid-template-rows: 1fr 1fr; */
+  }
+}
