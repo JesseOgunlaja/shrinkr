@@ -24,7 +24,7 @@ const CreateLinkForm = ({ destination, user }: PropsType) => {
     if (!title) return toast.error("Title required");
     if (!URLSchema.safeParse(destination).success)
       return toast.error("Invalid destination URL");
-    if (!backhalfSchema.safeParse(backhalf).success)
+    if (backhalf && !backhalfSchema.safeParse(backhalf).success)
       return toast.error("Invalid short link");
 
     promiseToast(
