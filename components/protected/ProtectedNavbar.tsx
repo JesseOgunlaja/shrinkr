@@ -6,6 +6,7 @@ import NavbarDropdown from "./NavbarDropdown";
 
 const ProtectedNavbar = async () => {
   const user = await getUser((await currentUser())?.id);
+  if (!user) return null;
 
   return (
     <nav className={styles.navbar}>

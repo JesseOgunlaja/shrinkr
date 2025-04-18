@@ -4,6 +4,7 @@ import PublicNavbar from "@/components/PublicNavbar";
 import { ClerkProvider, SignedIn, SignedOut } from "@clerk/nextjs";
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
+// import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 import { Poppins } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
