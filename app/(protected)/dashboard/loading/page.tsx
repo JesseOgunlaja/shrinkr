@@ -23,7 +23,7 @@ export default function Page() {
 
   return (
     <main className={styles.main}>
-      <p>We're just setting up your account</p>
+      <p>We&apos;re just setting up your account</p>
       <div className={styles.loading}>
         <div></div>
         <div></div>

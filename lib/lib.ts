@@ -16,11 +16,11 @@ export function promiseToast(
     ...customProps,
     loading: "Loading...",
     success: (data) => {
-      successFunction && successFunction(data);
+      if (successFunction) successFunction(data);
       return data as string;
     },
     error: (data) => {
-      errorFunction && errorFunction(data);
+      if (errorFunction) errorFunction(data);
       return data;
     },
   });
