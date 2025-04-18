@@ -18,8 +18,9 @@ export async function GET() {
       ],
       mode: "payment",
       metadata: { id },
-      success_url: `${env.BASE_URL}/dashboard?session_id={CHECKOUT_SESSION_ID}`,
+      allow_promotion_codes: true,
       cancel_url: `${env.BASE_URL}/update-plan`,
+      success_url: `${env.BASE_URL}/dashboard?session_id={CHECKOUT_SESSION_ID}`,
     });
 
     return NextResponse.redirect(String(session.url), 303);
