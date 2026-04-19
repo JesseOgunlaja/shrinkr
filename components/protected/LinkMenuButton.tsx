@@ -8,53 +8,55 @@ import { useState } from "react";
 import DeleteLinkDialog from "./DeleteLinkDialog";
 
 interface PropsType {
-  link: LinkType;
+    link: LinkType;
 }
 
 const LinkMenuButton = ({ link }: PropsType) => {
-  const { title, backhalf, destination } = link;
-  const [copyState, setCopyState] = useState(false);
-  const [deleteDialogState, setDeleteDialogState] = useState(false);
+    const { title, backhalf, destination } = link;
+    const [copyState, setCopyState] = useState(false);
+    const [deleteDialogState, setDeleteDialogState] = useState(false);
 
-  function copyButtonClick() {
-    navigator.clipboard.writeText(`https://shrinkr.link/${backhalf}`);
-    setCopyState(true);
+    function copyButtonClick() {
+        navigator.clipboard.writeText(
+            `https://shrinkr.jesseogu.dev/link/${backhalf}`,
+        );
+        setCopyState(true);
 
-    setTimeout(() => {
-      setCopyState(false);
-    }, 1500);
-  }
+        setTimeout(() => {
+            setCopyState(false);
+        }, 1500);
+    }
 
-  return (
-    <div className={styles.link}>
-      <div>
-        {title}
-        <div>
-          {copyState ? (
-            <Check onClick={copyButtonClick} />
-          ) : (
-            <Copy onClick={copyButtonClick} />
-          )}
+    return (
+        <div className={styles.link}>
+            <div>
+                {title}
+                <div>
+                    {copyState ? (
+                        <Check onClick={copyButtonClick} />
+                    ) : (
+                        <Copy onClick={copyButtonClick} />
+                    )}
 
-          <Link href={`/edit-link/${backhalf}`}>
-            <Pen />
-          </Link>
+                    <Link href={`/edit-link/${backhalf}`}>
+                        <Pen />
+                    </Link>
 
-          <Trash onClick={() => setDeleteDialogState(true)} />
+                    <Trash onClick={() => setDeleteDialogState(true)} />
 
-          <DeleteLinkDialog
-            active={deleteDialogState}
-            setActive={setDeleteDialogState}
-            link={link}
-          />
+                    <DeleteLinkDialog
+                        active={deleteDialogState}
+                        setActive={setDeleteDialogState}
+                        link={link}
+                    />
+                </div>
+            </div>
+            <Link href={`https://shrinkr.jesseogu.dev/link/${backhalf}`}>
+                shrinkr.jesseogu.dev/link/{backhalf}
+            </Link>
+            <Link href={destination}>{destination}</Link>
         </div>
-      </div>
-      <Link href={`https://shrinkr.link/${backhalf}`}>
-        shrinkr.link/{backhalf}
-      </Link>
-      <Link href={destination}>{destination}</Link>
-    </div>
-  );
+    );
 };
 
 export default LinkMenuButton;
